@@ -1,16 +1,21 @@
 # Charlá con Hermione Granger
 
+[Abrir el chat de Hermione](https://proyectom3-aldanacarmuega.vercel.app/chat)
+
 ## Descripción del personaje elegido
 
 Hermione Granger es un personaje del universo de Harry Potter que se destaca por su inteligencia, curiosidad, dedicación al estudio y lealtad a sus amigos. La aplicación interpreta su personalidad mediante Gemini, con respuestas breves en español y referencias a Hogwarts.
-
-Proyecto educativo desarrollado por Aldana Carmuega para el Proyecto Integrador del Módulo 3, con HTML, CSS y JavaScript vanilla. No es un producto oficial de la franquicia.
 
 ## Requisitos y pasos para ejecutar localmente
 
 Se necesita Node.js, npm, una cuenta de Vercel y una API key de Gemini con acceso y cuota para el modelo configurado. El entorno utilizado fue Node.js 24.18.0 y npm 11.16.0.
 
-1. Descargar o clonar el repositorio y abrir una terminal en la carpeta que contiene `package.json`.
+1. Clonar el repositorio y entrar en la carpeta:
+
+```bash
+git clone https://github.com/carmuegaaldana/ProyectoM3-CarmuegaAldana.git
+cd ProyectoM3-CarmuegaAldana
+```
 2. Instalar las dependencias:
 
 ```bash
@@ -56,7 +61,7 @@ Desde la raíz del proyecto:
 npm test
 ```
 
-Los cinco tests de `tests/functions.test.js` comprueban mensajes vacíos, extracción de respuestas, envío del historial, error 503 y respuestas sin texto. Usan `fetch` simulado y variables ficticias, sin consumir la API. Los cinco pasan; esto no sustituye la prueba con Gemini real.
+Los cinco tests de `tests/functions.test.js` comprueban mensajes vacíos, extracción de respuestas, envío del historial, error 503 y respuestas sin texto. Usan `fetch` simulado y variables ficticias, sin consumir la API. Los cinco tests pasaron. También se comprobó el chat con Gemini real en la aplicación desplegada.
 
 ## Cómo desplegar a Vercel
 
@@ -68,15 +73,39 @@ Los cinco tests de `tests/functions.test.js` comprueban mensajes vacíos, extrac
 6. Probar `/home`, `/chat` y `/about`, incluyendo recargas directas, navegación atrás/adelante y una conversación real de varios turnos.
 7. Si se modifican variables de entorno, realizar un nuevo despliegue.
 
-El despliegue todavía está pendiente. Antes de publicar, queda pendiente revisar las vulnerabilidades reportadas por npm y repetir la prueba completa en el navegador y en producción. El 30 de septiembre de 2026 se verificaron dos turnos reales mediante la función del servidor con `gemini-3.5-flash-lite`: respondió como Hermione y recordó el nombre y el tema de estudio del usuario.
+Para desplegar desde la terminal, después de iniciar sesión y vincular el proyecto con Vercel, ejecutar:
+
+```bash
+npx vercel --prod
+```
+
+La aplicación se publicó el 30 de septiembre de 2026. Se verificaron las vistas, las recargas y una conversación real con Gemini, incluyendo el recuerdo del nombre y del tema de estudio durante la sesión. El historial se mantiene en memoria y se reinicia al recargar la aplicación.
 
 ## Capturas de pantalla de la aplicación funcionando
 
-Pendiente de adjuntar las capturas de Inicio, Chat y Acerca del proyecto, incluyendo una vista móvil y una conversación real desde la interfaz. Las capturas no deben mostrar claves ni archivos de entorno.
+Capturas de la aplicación publicada en Vercel, tomadas el 30 de septiembre de 2026.
+
+**Inicio**
+
+![Página de bienvenida de Hermione Granger](docs/capturas/inicio.png)
+
+**Chat con una respuesta real de Gemini**
+
+![Conversación con Hermione sobre cómo estudiar JavaScript](docs/capturas/chat.png)
+
+**Chat en pantalla móvil (390 × 844)**
+
+![Vista móvil de la conversación con Hermione](docs/capturas/chat-movil.png)
+
+**Acerca del proyecto**
+
+![Información del proyecto y del personaje](docs/capturas/acerca.png)
 
 ## Link a la aplicación desplegada
 
-Pendiente de publicación. Se agregará aquí la URL pública de Vercel; localhost no es un enlace de entrega.
+- [Abrir la aplicación](https://proyectom3-aldanacarmuega.vercel.app)
+- [Ir directamente al chat](https://proyectom3-aldanacarmuega.vercel.app/chat)
+- [Repositorio en GitHub](https://github.com/carmuegaaldana/ProyectoM3-CarmuegaAldana)
 
 ## Registro del uso de AI en el proyecto
 
@@ -100,7 +129,7 @@ Estos cuatro mensajes fueron enviados durante el desarrollo y pueden acompañars
 
    > la guia del proyecto no recomienda cualusar?
 
-   Se contrastó la sugerencia con la teoría, que recomienda `gemini-2.5-flash`. Al probarlo, la API devolvió 404 indicando que no estaba disponible para usuarios nuevos. Se probó `gemini-3.8-flash`, sugerido por el mensaje de la API, pero devolvió 503. El 30 de septiembre se compararon ambos modelos con la misma clave: `gemini-3.5-flash-lite` respondió correctamente y quedó configurado. Se verificó una conversación real de dos turnos mediante la función del servidor, incluyendo recuerdo del nombre y del tema de estudio.
+   Se contrastó la sugerencia con la teoría, que recomienda `gemini-2.5-flash`. Al probarlo, la API devolvió 404 indicando que no estaba disponible para usuarios nuevos. Se probó `gemini-3.8-flash`, sugerido por el mensaje de la API, pero devolvió 503. El 30 de septiembre se realizaron nuevas pruebas con la misma clave: `gemini-3.5-flash-lite` respondió correctamente y quedó configurado. Se verificó una conversación real de dos turnos mediante la función del servidor, incluyendo recuerdo del nombre y del tema de estudio.
 
 4. **Revisión con la rúbrica**
 
@@ -108,4 +137,4 @@ Estos cuatro mensajes fueron enviados durante el desarrollo y pueden acompañars
 
    La revisión permitió distinguir requisitos implementados de los pendientes de comprobar. Se priorizaron las funcionalidades obligatorias, la separación de responsabilidades y la documentación antes de agregar extras.
 
-Las capturas de estas consultas quedan pendientes de adjuntar.
+Las sugerencias de AI se revisaron y adaptaron a la consigna. La clave de Gemini se mantiene en el servidor mediante variables de entorno; no se incluye en el frontend ni en el repositorio.
