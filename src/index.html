@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charlá con Hermione</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a class="site-brand" href="/home">Charlá con Hermione</a>
+
+      <nav aria-label="Navegación principal">
+        <a href="/home">Inicio</a>
+        <a href="/chat">Chat</a>
+        <a href="/about">Acerca del proyecto</a>
+      </nav>
+    </header>
+
+    <main id="app"></main>
+
+    <template id="chat-template">
+      <section class="chat" aria-labelledby="chat-title">
+        <header class="chat-header">
+          <h1 id="chat-title">Hermione Granger</h1>
+          <p>Un poco de ingenio y muchos libros para empezar la conversación.</p>
+        </header>
+
+        <div
+          class="chat-messages"
+          id="chat-messages"
+          role="log"
+          aria-label="Mensajes de la conversación"
+          aria-live="polite"
+        >
+        </div>
+
+        <p id="chat-status" class="chat-status" role="status"></p>
+        <p id="chat-error" class="chat-error" role="alert" hidden></p>
+        <button id="retry-button" class="retry-button" type="button" hidden>Reintentar último mensaje</button>
+
+        <form id="chat-form" class="chat-form">
+          <label for="message-input">Tu mensaje</label>
+
+          <div class="chat-input-row">
+            <input
+              type="text"
+              id="message-input"
+              name="message"
+              placeholder="Escribile a Hermione..."
+              required
+            />
+            <button type="submit">Enviar</button>
+          </div>
+        </form>
+      </section>
+    </template>
+
+    <footer class="site-footer">
+      <p>Proyecto Modulo 3 · Conversaciones generadas con IA.</p>
+    </footer>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
