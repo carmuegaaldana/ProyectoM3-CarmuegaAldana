@@ -82,8 +82,8 @@ async function requestReply() {
   isLoading = true;
   chatError = "";
 
-  renderMessages();
   renderState();
+  renderMessages();
 
   try {
     const reply = await getAIReply(messages);
@@ -94,14 +94,14 @@ async function requestReply() {
     chatError = error.message || "No se pudo obtener una respuesta.";
   } finally {
     isLoading = false;
-    renderMessages();
     renderState();
+    renderMessages();
   }
 }
 
 export function initChat() {
-  renderMessages();
   renderState();
+  renderMessages();
 
   const form = document.querySelector("#chat-form");
   form.addEventListener("submit", handleSubmit);

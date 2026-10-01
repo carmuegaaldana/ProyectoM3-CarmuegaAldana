@@ -85,7 +85,7 @@ La aplicación se publicó el 30 de septiembre de 2026. Se verificaron las vista
 
 ## Capturas de pantalla de la aplicación funcionando
 
-Capturas de la aplicación publicada en Vercel, tomadas el 30 de septiembre de 2026.
+Capturas de la aplicación publicada en Vercel, actualizadas el 1 de octubre de 2026 con el diseño mágico.
 
 **Inicio**
 
@@ -93,7 +93,7 @@ Capturas de la aplicación publicada en Vercel, tomadas el 30 de septiembre de 2
 
 **Chat con una respuesta real de Gemini**
 
-![Conversación con Hermione sobre cómo estudiar JavaScript](docs/capturas/chat.png)
+![Conversación con Hermione sobre su lugar favorito de Hogwarts](docs/capturas/chat.png)
 
 **Chat en pantalla móvil (390 × 844)**
 
