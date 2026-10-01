@@ -1,10 +1,12 @@
 # Charlá con Hermione Granger
 
-[Abrir el chat de Hermione](https://proyectom3-aldanacarmuega.vercel.app/chat)
-
 ## Descripción del personaje elegido
 
 Hermione Granger es un personaje del universo de Harry Potter que se destaca por su inteligencia, curiosidad, dedicación al estudio y lealtad a sus amigos. La aplicación interpreta su personalidad mediante Gemini, con respuestas breves en español y referencias a Hogwarts.
+
+## Link a la aplicación desplegada
+
+[Abrir la aplicación](https://proyectom3-aldanacarmuega.vercel.app)
 
 ## Requisitos y pasos para ejecutar localmente
 
@@ -100,12 +102,6 @@ Capturas de la aplicación publicada en Vercel, tomadas el 30 de septiembre de 2
 **Acerca del proyecto**
 
 ![Información del proyecto y del personaje](docs/capturas/acerca.png)
-
-## Link a la aplicación desplegada
-
-- [Abrir la aplicación](https://proyectom3-aldanacarmuega.vercel.app)
-- [Ir directamente al chat](https://proyectom3-aldanacarmuega.vercel.app/chat)
-- [Repositorio en GitHub](https://github.com/carmuegaaldana/ProyectoM3-CarmuegaAldana)
 
 ## Registro del uso de AI en el proyecto
 
