@@ -109,32 +109,58 @@ Capturas de la aplicación publicada en Vercel, tomadas el 30 de septiembre de 2
 
 ## Registro del uso de AI en el proyecto
 
-Se utilizó ChatGPT/Codex como apoyo para interpretar la consigna, explicar e implementar código, diagnosticar errores y preparar tests y documentación. Se mantuvo JavaScript vanilla y se comprobaron las sugerencias mediante pruebas manuales y unitarias.
+Se utilizó ChatGPT/Codex como apoyo para revisar la consigna, proponer ideas de diseño y diagnosticar problemas con Gemini. A continuación se documentan tres consultas, cada una con una captura de la pregunta y otra de la respuesta.
 
-Estos cuatro mensajes fueron enviados durante el desarrollo y pueden acompañarse con capturas del chat:
+1. **Guía para revisar el proyecto**
 
-1. **Organización del trabajo**
+   > Estoy haciendo el proyecto del modulo 3 sobre de la carrera full stack. Este es el proyecto lo que necesitos es que hagas de guia para ir revisando
 
-   > Ahora vamos con el proyecto del modulo 3, te voy a subir primero el archivo con la teoria de este modulo, despues el proyecto y las guias. Seguimos como veniamos, me guias para resolverlo
+   La respuesta organizó la revisión por etapas: interfaz responsive, navegación SPA, chat en memoria, integración segura con Gemini, estados y errores, tests y entrega. Sirvió como guía para priorizar los requisitos obligatorios antes de los extras.
 
-   La respuesta ayudó a organizar el desarrollo por etapas: interfaz, navegación, chat en memoria, integración y pruebas.
+   **Captura del prompt**
 
-2. **Elección del personaje**
+   ![Prompt 1: Guía para revisar el proyecto](docs/capturas/ia-prompt-1-pregunta.png)
 
-   > personaje **Hermione Granger, hay que arrancar desde cero**
+   **Captura de la respuesta**
 
-   Se eligió a Hermione y se preparó desde cero la estructura del proyecto. Más adelante se definieron su tono y personalidad en el system prompt.
+   ![Respuesta al prompt 1: Revisión del proyecto por etapas](docs/capturas/ia-prompt-1-respuesta.png)
 
-3. **Revisión del modelo de Gemini**
+2. **Ideas de CSS para el personaje**
 
-   > la guia del proyecto no recomienda cualusar?
+   > Necesito ayuda con el Css, dame ideas de estilos para que sea orientado al personaje hermione granger y tenga un estilo magico
 
-   Se contrastó la sugerencia con la teoría, que recomienda `gemini-2.5-flash`. Al probarlo, la API devolvió 404 indicando que no estaba disponible para usuarios nuevos. Se probó `gemini-3.8-flash`, sugerido por el mensaje de la API, pero devolvió 503. El 30 de septiembre se realizaron nuevas pruebas con la misma clave: `gemini-3.5-flash-lite` respondió correctamente y quedó configurado. Se verificó una conversación real de dos turnos mediante la función del servidor, incluyendo recuerdo del nombre y del tema de estudio.
+   La respuesta propuso tres estilos: biblioteca encantada, sala común de Gryffindor y magia nocturna. Estas ideas sirvieron como referencia para relacionar la apariencia con Hermione y Hogwarts. El diseño final utiliza tonos oscuros, bordó y dorado, adaptados mediante CSS a distintos tamaños de pantalla.
 
-4. **Revisión con la rúbrica**
+   **Captura del prompt**
 
-   > antes de seguir t esubo la rubrica de correccion a ver como vamos
+   ![Prompt 2: Ideas de estilos CSS para Hermione](docs/capturas/ia-prompt-2-pregunta.png)
 
-   La revisión permitió distinguir requisitos implementados de los pendientes de comprobar. Se priorizaron las funcionalidades obligatorias, la separación de responsabilidades y la documentación antes de agregar extras.
+   **Captura de la respuesta**
 
-Las sugerencias de AI se revisaron y adaptaron a la consigna. La clave de Gemini se mantiene en el servidor mediante variables de entorno; no se incluye en el frontend ni en el repositorio.
+   ![Respuesta al prompt 2: Propuestas de estilos y colores](docs/capturas/ia-prompt-2-respuesta.png)
+
+3. **Consulta por el error 503 de Gemini**
+
+   > tengo un error 503 con gemini, que otra version puedo usar para que funcione
+
+   La respuesta sugirió probar `gemini-3.5-flash-lite` y aclaró que cambiar de modelo no garantiza resolver un error 503. Mostró cómo cambiar el modelo en la URL de la petición. En el proyecto, el modelo se configura mediante la variable de entorno `GEMINI_MODEL`; se utilizó `gemini-3.5-flash-lite` y se comprobó una respuesta real del chat en la aplicación desplegada.
+
+   **Captura del prompt**
+
+   ![Prompt 3: Consulta sobre el error 503 de Gemini](docs/capturas/ia-prompt-3-pregunta.png)
+
+   **Captura de la respuesta**
+
+   ![Respuesta al prompt 3: Sugerencia de modelo y explicación del error](docs/capturas/ia-prompt-3-respuesta.png)
+
+Las sugerencias de AI se revisaron y adaptaron a la consigna, manteniendo HTML, CSS y JavaScript vanilla. La clave de Gemini se conserva en el servidor mediante variables de entorno y no se incluye en el frontend ni en el repositorio.
+
+## Mejoras futuras
+
+Estas propuestas no están implementadas en la versión actual y podrían incorporarse en próximas versiones:
+
+- **Guardar conversaciones:** permitir conservar el historial en `localStorage` para recuperarlo al recargar, con un indicador de historial guardado y un botón para borrarlo.
+- **Elegir otros personajes:** agregar una galería con personajes de Hogwarts, cada uno con su propia personalidad e instrucciones para Gemini.
+- **Modo claro y oscuro:** ofrecer un selector entre una apariencia de pergamino claro y el estilo oscuro actual.
+- **Más opciones en los mensajes:** mostrar la hora de envío y permitir copiar las respuestas de Hermione al portapapeles.
+- **Reintentos automáticos controlados:** ante errores temporales de Gemini, incorporar esperas crecientes y un límite de intentos, informando al usuario del estado de la solicitud.

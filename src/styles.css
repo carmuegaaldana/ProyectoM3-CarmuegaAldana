@@ -18,6 +18,9 @@ body {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
+  background-image:
+    radial-gradient(ellipse at 15% 0%, #57303966, transparent 55%),
+    radial-gradient(ellipse at 90% 85%, #9b75351c, transparent 50%);
 }
 
 a {
@@ -42,12 +45,14 @@ input {
 
 .site-header {
   padding: 1rem;
-  background-color: var(--surface);
-  border-bottom: 1px solid #514044;
+  background: linear-gradient(110deg, #321f28, #211b20);
+  border-bottom: 1px solid #e8c07855;
 }
 
 .site-brand {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   color: var(--gold);
   font-size: 1.2rem;
   font-weight: bold;
@@ -90,13 +95,15 @@ nav a:hover {
   min-height: 380px;
   overflow: hidden;
   background-color: var(--surface);
-  border: 1px solid #514044;
+  border: 1px solid #e8c07866;
+  box-shadow: 0 16px 45px #0005, inset 0 0 0 4px #e8c07808;
   border-radius: 16px;
 }
 
 .chat-header {
   padding: 1rem;
-  border-bottom: 1px solid #514044;
+  border-bottom: 1px solid #e8c07840;
+  background: linear-gradient(120deg, #482834, #292027);
 }
 
 .chat-header h1 {
@@ -143,7 +150,9 @@ nav a:hover {
 
 .message--character {
   align-self: flex-start;
-  background-color: #493238;
+  background: linear-gradient(135deg, #51343f, #3b2933);
+  border: 1px solid #e8c07830;
+  border-bottom-left-radius: 3px;
 }
 
 .message--character .message-author {
@@ -153,7 +162,8 @@ nav a:hover {
 .message--user {
   align-self: flex-end;
   color: #21190f;
-  background-color: var(--gold);
+  background: linear-gradient(135deg, #f2dba7, #dfb96f);
+  border-bottom-right-radius: 3px;
 }
 
 .chat-status {
@@ -270,7 +280,8 @@ nav a:hover {
 .info-page {
   padding: 1.5rem;
   background-color: var(--surface);
-  border: 1px solid #514044;
+  border: 1px solid #e8c07866;
+  box-shadow: 0 16px 45px #0005, inset 0 0 0 4px #e8c07808;
   border-radius: 16px;
 }
 
@@ -324,4 +335,62 @@ nav a[aria-current="page"] {
 .chat-error,
 .retry-button {
   flex-shrink: 0;
+}
+
+/* Detalles de biblioteca mágica, sin imágenes ni fuentes externas. */
+.brand-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  border: 1px solid #e8c07866;
+  border-radius: 50%;
+  background: #e8c07812;
+  font-size: 1.55rem;
+}
+
+.site-brand,
+.chat-header h1,
+.info-page h1 {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.chat-header .chat-eyebrow {
+  margin-bottom: 0.5rem;
+  color: #e8c078;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.chat-messages {
+  background-image:
+    radial-gradient(circle at 20px 30px, #e8c07825 1px, transparent 1.5px),
+    radial-gradient(circle at 90px 110px, #e8c07815 1px, transparent 1.5px);
+  background-size: 160px 180px;
+  scrollbar-width: thin;
+  scrollbar-color: #98774a #251e20;
+}
+
+.chat-form {
+  background: #211a20;
+  border-top-color: #e8c07840;
+}
+
+.chat-input-row button,
+.primary-link {
+  background: linear-gradient(135deg, #f4dca8, #d8ab5f);
+  box-shadow: 0 3px 12px #0003;
+}
+
+.chat-input-row button:not(:disabled):hover,
+.primary-link:hover {
+  background: #f7dfad;
+  box-shadow: 0 0 16px #e8c07830;
+}
+
+nav a[aria-current="page"] {
+  box-shadow: inset 0 -2px var(--gold);
 }
